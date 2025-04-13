@@ -1,10 +1,11 @@
-# 📝 Study Note - Notion風ノートアプリ
+# 📝 Study Note - Notion風ノートアプリ（現在開発中）
 
 個人開発の学習用プロジェクトとして、NotionライクなノートアプリをReactで構築しました。  
-認証やデータ管理には Supabase を使用し、軽量でモダンな技術を意識して設計しています。
+個人的にノートアプリを多用しているので、自分が欲しいと思う機能をつけたエンジニア向けに特化したノートアプリを作成しています。
 
 ---
-
+## 📚元にした教材
+>　[【実務レベルの開発を学びたい方へ】React + Typescriptで超本格的なNotionクローンを作ろう](https://www.udemy.com/course/react-notion-clone/?couponCode=25BBPMXPLOYCTRL)<br>講師：まさとらん（Masatolan）さん
 ## 🚀 使用技術（Tech Stack）
 
 ### 🔷 フロントエンド
