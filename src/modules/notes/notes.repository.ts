@@ -19,7 +19,7 @@ export const noteRepository =  {
         if (error != null) throw new Error(error.message);
         return data;
         },
-    async finf (userId: string, parentDocumentId: number) {
+    async find (userId: string, parentDocumentId?: number) {
         const query = supabase
             .from('notes')
             .select()
@@ -29,5 +29,6 @@ export const noteRepository =  {
                 parentDocumentId != null 
                     ? await query.eq("parent_document",parentDocumentId) 
                     : await query.is('parent_document',null);
+            return data;
     }
 }
