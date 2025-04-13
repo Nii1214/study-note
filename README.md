@@ -1,54 +1,38 @@
-# React + TypeScript + Vite
+# 📝 Study Note - Notion風ノートアプリ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+個人開発の学習用プロジェクトとして、NotionライクなノートアプリをReactで構築しました。  
+認証やデータ管理には Supabase を使用し、軽量でモダンな技術を意識して設計しています。
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 使用技術（Tech Stack）
 
-## Expanding the ESLint configuration
+### 🔷 フロントエンド
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React** v19.0.0  
+- **React DOM** v19.0.0  
+- **React Router DOM** v7.5.0  
+- **Jotai** v2.12.2（グローバルステート管理）  
+- **Tailwind CSS** v3.4.17  
+- **tailwindcss-animate** v1.0.7（アニメーション対応）  
+- **clsx** / **class-variance-authority**（クラス名の動的管理）  
+- **lucide-react**（アイコン）  
+- **cmdk**（コマンドパレット UI）  
+- **react-textarea-autosize**（自動リサイズテキストエリア）
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 🛠️ バックエンド・認証
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Supabase JS** v2.49.4  
+  - 認証（Email/Password）
+  - データベース操作（ノートの保存など）
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 💻 開発ツール・その他
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- **TypeScript** v5.7.2  
+- **Vite** v6.2.0（高速ビルドツール）  
+- **ESLint** + **typescript-eslint**（コード品質管理）  
+- **PostCSS / Autoprefixer**（CSS最適化）
+
+---
+
+## 📂 ディレクトリ構成
