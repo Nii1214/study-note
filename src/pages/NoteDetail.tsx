@@ -1,3 +1,4 @@
+import Editor from '@/components/Editor';
 import { TitleInput } from '@/components/TitleInput';
 import { useCurrentUserStore } from '@/modules/auth/current-user.state';
 import { useNoteStore } from '@/modules/notes/note.state';
@@ -45,6 +46,7 @@ const NoteDetail = () => {
       <div className="md:max-w-3xl lg:md-max-w-4xl mx-auto">
         <TitleInput initialData={note} onTitleChange={(title) => updateNote(id,{ title} )}/>
       </div>
+      <Editor />
     </div>
   );
 };
