@@ -23,7 +23,7 @@ const SideBar: FC<Props> = ({ onSearchButtonClicked }) => {
 
   return (
     <>
-      <aside className="group/sidebar h-full bg-neutral-100 overflow-y-auto relative flex flex-col w-60">
+      <aside className="group/sidebar h-full bg-neutral-100 overflow-y-auto relative flex flex-col w-60 dark:bg-[#323232] dark:text-white">
         <div>
           <div>
             <UserItem

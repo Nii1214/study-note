@@ -28,7 +28,7 @@ const Layout = () => {
 
 
   return (
-    <div className="h-full flex">
+    <div className="h-full flex dark:bg-[#1e1e1e] dark:text-white">
       {!isLoading && <SideBar onSearchButtonClicked={() => {}} />}
       <main className="flex-1 h-full overflow-y-auto">
         <Outlet />

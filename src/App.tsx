@@ -12,6 +12,38 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const currentUserStore = useCurrentUserStore();
 
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    // ユーザーの端末のテーマ設定を取得
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setIsDarkMode(prefersDarkMode);
+
+    // 端末のテーマ設定が変更されたときに再評価
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsDarkMode(e.matches);
+    };
+
+    // 変更を監視
+    mediaQuery.addEventListener('change', handleChange);
+
+    return () => {
+      // クリーンアップ: イベントリスナーの解除
+      mediaQuery.removeEventListener('change', handleChange);
+    };
+  }, []);
+
+  // ダークモードのクラスを変更する
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
+  //セッションの取得
   useEffect(() => {
     setSession();
   },[]);
@@ -27,7 +59,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="h-full">
+      <div className="h-full dark:bg-[#1e1e1e] dark:text-white">
         <Routes>
           <Route path="/" element={<Layout/>}>
             <Route index element= {<Home/>}/>

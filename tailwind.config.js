@@ -3,6 +3,7 @@ export default {
   darkMode: ['class'],
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   plugins: [react(), require('tailwindcss-animate')],
+  darkMode: 'class', // ダークモードの設定
   theme: {
   	extend: {
   		colors: {
