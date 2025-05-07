@@ -20,7 +20,7 @@ export function Home() {
   }
 
   return (
-    <Card className="border-0 shadow-none w-1/2 m-auto">
+    <Card className="border-0 shadow-none w-1/2 m-auto dark:bg-[#1e1e1e] dark:text-white">
       <CardHeader className="px-4 pb-3">
         <CardTitle className="text-lg font-medium">
           新しいノートを作成してみましょう
@@ -35,7 +35,7 @@ export function Home() {
             onChange={(e) => setTitle(e.target.value)}
             value={title}
           />
-          <button className="flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-slate-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 disabled:opacity-50 disabled:cursor-not-allowed"
+          <button className="flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xs sm:text-sm font-medium text-slate-900 bg-emerald-50 hover:bg-emerald-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 disabled:opacity-50 disabled:cursor-not-allowed dark:bg-emerald-900 dark:text-white dark:hover:bg-emerald-800"
             onClick={createNote}
           >
             <Plus className="h-4 w-4" />
